@@ -3,9 +3,6 @@ use std::io::{self, BufRead};
 use std::path::Path;
 use std::collections::HashSet;
 
-use itertools::Itertools;
-use multiset::HashMultiSet;
-
 use strum_macros::EnumString;
 use std::str::FromStr;
 
@@ -41,7 +38,7 @@ impl Instruction {
 fn main() {
 
     if let Ok(lines) = read_lines("./data/day8.txt") { 
-        let mut program = lines.map(|line| {
+        let program = lines.map(|line| {
             let line_str = line.unwrap();
             let parts = line_str.split(" ").collect::<Vec<_>>();
             Instruction::new(parts[0], parts[1].parse::<i32>().unwrap())

@@ -33,8 +33,8 @@ fn main() {
         let valid = grouped_lines
             .into_iter()
             .filter(|(b, _lines)| *b)
-            .map(|(_b, mut lines)| {
-                let mut vlines = lines.collect::<Vec<_>>();
+            .map(|(_b, lines)| {
+                let vlines = lines.collect::<Vec<_>>();
                 let line_count = vlines.len();
                 let counts = vlines.into_iter().join("").chars().collect::<HashMultiSet<_>>();
                 counts.distinct_elements().filter(|e| counts.count_of(e) == line_count).count()
