@@ -4,11 +4,6 @@ use std::io::{self, BufRead};
 use std::path::Path;
 use std::cmp;
 
-use cmp::Ordering;
-// use multiset::HashMultiSet;
-
-// use itertools::Itertools;
-
 
 #[derive(Clone, Copy, Debug, PartialEq)]
 enum Pos {
